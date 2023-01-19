@@ -1,13 +1,8 @@
 import React, { useCallback, useState } from "react";
 
-export interface UserPayload {
-  id: string;
-  roles: string[];
-  permissions: string[];
-}
-
 //context
 import PermifyContext from "./PermifyContext";
+import { TUserRoleTuple, UserPayload } from "./utils/models/user";
 
 const LOCAL_STORAGE_KEY_USER = "__permifyUser";
 
@@ -22,23 +17,26 @@ const PermifyProvider = ({ children }: Props) => {
     localStorage.setItem(LOCAL_STORAGE_KEY_USER, JSON.stringify(newUser));
   };
 
-  const isAuthorized = useCallback(async (roleNames: string[], permissionNames?: string[]): Promise<boolean> => {
-    let hasAuthorization: boolean = false;
-    const storedUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_USER));
+  const isAuthorized = useCallback(
+    async (roleNames: TUserRoleTuple[], permissionNames?: TUserRoleTuple[]): Promise<boolean> => {
+      let hasAuthorization: boolean = false;
+      const storedUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_USER));
 
-    setIsLoading(true);
-    if (storedUser) {
-      hasAuthorization = await CheckUserHasRolesOrPermissions(storedUser, roleNames, permissionNames);
-    }
-    setIsLoading(false);
+      setIsLoading(true);
+      if (storedUser) {
+        hasAuthorization = await CheckUserHasRolesOrPermissions(storedUser, roleNames, permissionNames);
+      }
+      setIsLoading(false);
 
-    return hasAuthorization;
-  }, []);
+      return hasAuthorization;
+    },
+    []
+  );
 
   const CheckUserHasRolesOrPermissions = async (
     storedUser: UserPayload,
-    roleNames?: string[],
-    permissionNames?: string[]
+    roleNames?: TUserRoleTuple[],
+    permissionNames?: TUserRoleTuple[]
   ): Promise<boolean> => {
     let hasRoles: boolean = false;
     let hasPermissions: boolean = false;

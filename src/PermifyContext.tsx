@@ -1,10 +1,5 @@
 import { createContext } from "react";
-
-export interface UserPayload {
-  id: string | number;
-  roles?: (string | number)[];
-  permissions?: (string | number)[];
-}
+import { UserPayload } from "./utils/models/user";
 
 export interface PermifyAuthContext {
   setUser: (user: UserPayload) => void;
