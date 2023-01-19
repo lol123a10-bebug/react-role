@@ -5,17 +5,6 @@
 
 React Role is lightweight role based access management solution which provides components, hooks, and helper methods for controlling access checks and user permissions throughout your entire React application.
 
-# Installation
-Use npm to install: 
-
-```shell
-npm install @permify/react-role
-```
-Use yarn to install:
-
-```shell
-yarn add @permify/react-role
-```
 
 # How to use
 
