@@ -1,6 +1,6 @@
 {
   "name": "@permify/react-role",
-  "version": "0.5.3",
+  "version": "0.5.3.1",
   "description": "Lightweight role based access management solution for React applications",
   "author": "EgeAytin",
   "license": "Apache-2.0",
@@ -39,4 +39,3 @@
     "npm"
   ]
 }
- 
