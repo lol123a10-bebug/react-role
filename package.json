@@ -1,10 +1,10 @@
 {
-  "name": "@permify/react-role",
-  "version": "0.5.4",
+  "name": "@lol123a10-bebug/react-role",
+  "version": "0.0.1",
   "description": "Lightweight role based access management solution for React applications",
   "author": "EgeAytin",
   "license": "Apache-2.0",
-  "repository": "Permify/react-role",
+  "repository": "https://github.com/lol123a10-bebug/react-role.git",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8",
@@ -37,5 +37,8 @@
     "react",
     "typescript",
     "npm"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
