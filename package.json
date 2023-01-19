@@ -1,6 +1,6 @@
 {
   "name": "@lol123a10-bebug/react-role",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightweight role based access management solution for React applications",
   "author": "EgeAytin",
   "license": "Apache-2.0",
