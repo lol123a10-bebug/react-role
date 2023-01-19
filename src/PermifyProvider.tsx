@@ -11,9 +11,13 @@ import PermifyContext from "./PermifyContext";
 
 const LOCAL_STORAGE_KEY_USER = "__permifyUser";
 
-const PermifyProvider: React.FunctionComponent = ({
+interface Props {
+    children: React.ReactNode;
+}
+
+const PermifyProvider = ({
     children
-}) => {
+}: Props) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const updateUser = (newUser: UserPayload) => {
